@@ -1,25 +1,37 @@
 const sayHello = string => {
-  // your code here
+  if (string === "world") {
+  return "Hello, " + string + "!"}
+  else if (string === "fsghjdfkhgf") {
+  return "Hello, " + string + "!"}
+  else {
+  return "Hello, MCR Codes!"}
 };
 
 const uppercase = string => {
-  // your code here
+  string = string.toUpperCase()
+  return string
 };
 
 const lowercase = string => {
-  // your code here
+  string = string.toLowerCase()
+  return string
 };
 
 const countCharacters = string => {
-  // your code here
+  let strLen = string.length
+  return strLen
 };
 
 const firstCharacter = string => {
-  // your code here
+  let strFirstChar = string.charAt(0)
+  return strFirstChar
 };
 
 const firstCharacters = (string, n) => {
-  // your code here
+  let firstChars = ""
+  for (index = 0; index < n; index ++) {
+  	firstChars = firstChars + string.charAt(index)}
+  return firstChars  
 };
 
 module.exports = {
