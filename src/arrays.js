@@ -1,62 +1,96 @@
 const getNthElement = (index, array) => {
-  // your code here
+  if (index >= array.length) {
+  index = index - array.length
+  return array[index]; }
+  else {
+  return array[index]; }
 };
 
 const arrayToCSVString = array => {
-  // your code here
+  return array.join(",");
 };
 
 const csvStringToArray = string => {
-  // your code here
+  var array = string.split(',');
+  return array;
 };
 
 const addToArray = (element, array) => {
-  // your code here
+  array.push(element);
 };
 
 const addToArray2 = (element, array) => {
-  // your code here
+  let newArray;
+  newArray = array.concat(element);
+  return newArray;
 };
 
 const removeNthElement = (index, array) => {
-  // your code here
+  return array.splice(index, 1);
 };
 
 const numbersToStrings = numbers => {
-  // your code here
+  return numbers.map(String);
 };
 
 const uppercaseWordsInArray = strings => {
-  // your code here
+  strings = strings.map(function(capital) { return capital.toUpperCase() })
+  return strings;
 };
 
 const reverseWordsInArray = strings => {
-  // your code here
+  for (let i = 0; i < strings.length; i++) {
+    let splitString = strings[i].split("");
+    let revString = splitString.reverse();
+    strings[i] = revString.join(""); }
+  return strings;
 };
 
 const onlyEven = numbers => {
-  // your code here
+  let count = 0;
+  let evenNum = [];
+  for (let i = 0; i < numbers.length; i ++) {
+    if (numbers[i] % 2 === 0) {
+      evenNum[count] = numbers[i]
+      count ++ ;}
+    }
+  return evenNum;
 };
 
 const removeNthElement2 = (index, array) => {
-  // your code here
+  let newArray = array.slice();
+  newArray.splice(index, 1);
+  return newArray;
 };
 
 const elementsStartingWithAVowel = strings => {
-  // your code here
+  /*let vowelArray = [];
+  for (let i = 0; i < strings.length; i ++) {
+  if (strings[i].charAt(0) === "a" || strings[i].charAt(0) === "e" || strings[i].charAt(0) === "i" || strings[i].charAt(0) === "o" || strings[i].charAt(0) === "u") 
+  {
+      vowelArray.push(strings[i]) }
+  }
+  return vowelArray;
+  The filter() method creates a new array with all elements that pass the test implemented by the provided function.
+  */
+  let vowelCheck = /^[aeiou]/i;
+  let vowelArray = strings.filter(string => vowelCheck.test(string));
+  return vowelArray;
 };
 
 const removeSpaces = string => {
-  // your code here
+  let noSpacesString = string.replace(/ /g, "");
+  return noSpacesString;
 };
 
 const sumNumbers = numbers => {
-  // your code here
+  const sum = numbers.reduce((total, currentValue) => total + currentValue);
+  return sum;
 };
 
 const sortByLastLetter = strings => {
-  // your code here
-};
+  return strings.sort((firstValue, secondValue) => firstValue.charCodeAt(firstValue.length - 1) - secondValue.charCodeAt(secondValue.length - 1));
+ };
 
 module.exports = {
   getNthElement,
